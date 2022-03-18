@@ -16,7 +16,7 @@ void binSearch(int a[], int n, int key)
 
 		if(a[mid]==key)
 		{
-			cout<<"Present "<<ctr;
+			cout<<"Present "<<ctr<<endl;
 			flag=false;
 			break;
 		}
@@ -28,23 +28,29 @@ void binSearch(int a[], int n, int key)
 			tl=mid-1;
 	}
 	if(flag)
-		cout<<"Not Present "<<ctr;
+		cout<<"Not Present "<<ctr<<endl;
 }
 
 int main ()
 {
 	int i;
 	int n;
+	int t;
 	int key;
 
-	cin>>n;
-	int a[n];
+	cin>>t;
+	
+	while(t--)
+	{
+		cin>>n;
+		int a[n];
 
-	for(i=0;i<n;i++)
-		cin>>a[i];
+		for(i=0;i<n;i++)
+			cin>>a[i];
 
-	cin>>key;
+		cin>>key;
 
-	binSearch(a, n, key);
+		binSearch(a, n, key);
+	}
 	return 0;
 }
