@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+int bSort(int a[], int n)
+{
+    bool flag;
+    int i;
+    int j;
+    int temp;
+    int comp=0;
+
+    for(i=0;i<n;i++)
+    {
+        flag=1;
+        
+        for(j=0;j<n-i-1;j++)
+        {
+          if(a[j+1]<a[j]){
+              flag=0;
+              temp=a[j];
+              a[j]=a[j+1];
+              a[j+1]=temp;
+          }
+          comp++;
+        }
+        if(flag)
+            break;
+    }
+    return comp;
+}
+
+int main ()
+{
+    int i;
+    int n;
+    
+    cin>>n;
+    int a[n];
+    for(i=0;i<n;i++)
+        cin>>a[i];
+    
+    cout<<"\nNumber of comparisions: "<<bSort(a, n);
+    cout<<"\nAfter sorting: ";
+    for(i=0;i<n;i++)
+        cout<<a[i]<<" ";
+    return 0;
+}
