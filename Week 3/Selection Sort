@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int iSort (int a[], int n){
+    int i;
+    int j;
+    int sml;
+    int pos;
+    int comp=0;
+
+    for(i=0;i<n;i++){
+        pos=i;
+        sml=a[i];
+        for(j=i+1;j<n;j++){
+            if(a[j]<sml){
+                sml=a[j];
+                pos=j;
+            }
+            comp++;
+        }
+        if(pos!=i){
+            a[pos]=a[i];
+            a[i]=sml;
+        }
+    }
+    return comp;
+}
+
+int main ()
+{
+    int i;
+    int n;
+
+    cin>>n;
+    int a[n];
+    for(i=0;i<n;i++)
+        cin>>a[i];
+
+    cout<<"Number of comparisions: "<<iSort(a, n);
+    cout<<"\nSorted array: ";
+    for(i=0;i<n;i++)
+        cout<<a[i]<<" ";
+
+    return 0;
+}
