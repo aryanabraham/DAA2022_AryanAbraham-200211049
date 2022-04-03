@@ -2,6 +2,7 @@
 //find Kth smallest or largest element in the array. (Worst case Time Complexity = O(n))
 
 #include <iostream>
+using namespace std;
 
 int main()
 {
