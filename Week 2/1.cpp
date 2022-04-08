@@ -41,6 +41,6 @@ int main()
             }
         }
 
-        cout<<key<<" occurs "<<((occur2-occur1)-1)<<" times";
+        cout<<key<<" - "<<((occur2-occur1)-1)<<endl;
     }
 }
