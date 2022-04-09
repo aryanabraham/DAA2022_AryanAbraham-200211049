@@ -1,16 +1,13 @@
-//Given an unsorted array of integers, design an algorithm and a program to sort the array using 
-//insertion sort. Your program should be able to find number of comparisons and shifts ( shifts total 
-//number of times the array elements are shifted from their place) required for sorting the array.
-
 #include <iostream>
 using namespace std;
 
-int iSort(int a[], int n)
+void iSort(int a[], int n)
 {
     int i;
     int j;
     int curr;
     int comp=0;
+    int shift=0;
 
     for(i=1;i<n;i++){
         j=i-1;
@@ -19,26 +16,31 @@ int iSort(int a[], int n)
             a[j+1]=a[j];
             j--;
             comp++;
+            shift++;
         }
         a[j+1]=curr;
+        shift++;
     }
-    return comp;
+
+    for(i=0;i<n;i++)
+            cout<<a[i]<<" ";
+    cout<<"\ncomparisions = "<<comp;
+    cout<<"\nshifts = "<<shift<<endl;
 }
 
 int main ()
 {
-    int i;
-    int n;
+    int i, n, t;
 
+    cin>>t;
+
+    while(t--){
     cin>>n;
     int a[n];
     for(i=0;i<n;i++)
         cin>>a[i];
 
-    cout<<"Number of comparisions: "<<iSort(a, n);
-    cout<<"\nSorted Array: ";
-    for(i=0;i<n;i++)
-        cout<<a[i]<<" ";
-
+    iSort(a, n);
+    }
     return 0;
 }
