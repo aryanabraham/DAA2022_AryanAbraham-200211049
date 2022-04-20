@@ -1,6 +1,3 @@
-//Given an unsorted array of integers, design an algorithm and implement it using a program to
-//find Kth smallest or largest element in the array. (Worst case Time Complexity = O(n))
-
 #include <iostream>
 using namespace std;
 
